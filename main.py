@@ -2,11 +2,16 @@ import requests
 import json
 import pandas as pd
 import logging
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+API_KEY = os.getenv('EXCHANGE_API_KEY')
 
 logging.basicConfig(level=logging.INFO, filename="py_log.log",filemode="w",
                     format="%(asctime)s %(levelname)s %(message)s")
 
-url = 'https://v6.exchangerate-api.com/v6/b065992828d0acedf5d01599/latest/USD'
+url = f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD"
 try:
     logging.info("Отправка запроса к API")
     response = requests.get(url)
