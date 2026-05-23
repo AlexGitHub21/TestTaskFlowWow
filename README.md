@@ -13,7 +13,11 @@ cd TestTaskFlowWow
 pip install -r requirements.txt
 ```
 
-### 3. Запуск скрипта
+### 3. Переменные окружения
+Создать файл .env в папке проекта
+Прописать в файле переменную `EXCHANGE_API_KEY={API KEY}`
+
+### 4. Запуск скрипта
 ```commandline
 python main.py
 ```
